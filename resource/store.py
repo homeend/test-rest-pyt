@@ -7,7 +7,7 @@ from model.store import StoreModel
 class StoreList(Resource):
     @jwt_required()
     def get(self):
-        return {'items': [store.json() for store in StoreModel.get_all()]}
+        return {'stores': [store.json() for store in StoreModel.get_all()]}
 
 
 class Store(Resource):
