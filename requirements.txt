@@ -2,4 +2,5 @@ flask
 flask-restful
 Flask-JWT
 Flask-SQLAlchemy
+werkzeug
 uwsgi
