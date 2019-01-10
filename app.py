@@ -12,11 +12,11 @@ from resource.user import UserRegister
 
 def create_app():
     database_url = os.environ.get('DATABASE_URL', 'sqlite:///data.db')
+    jwt_secret_key = os.environ.get('JWT_SECRET_KEY', '1234567890')
 
     app = Flask(__name__)
-    app.secret_key = '1234567890'
+    app.secret_key = jwt_secret_key
     app.config['SQLALCHEMY_DATABASE_URI'] = database_url
-    # app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.db'
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     api = Api(app)
 
