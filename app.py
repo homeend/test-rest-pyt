@@ -21,7 +21,6 @@ def create_app():
     api = Api(app)
 
     JWT(app, auth, identity)
-    # jwt = JWT(app, auth, identity)
 
     api.add_resource(Item, '/item/<string:name>')
     api.add_resource(ItemList, '/items')

@@ -18,7 +18,7 @@ class UserRegister(Resource):
                         help="This field cannot be empty")
 
     def post(self):
-        data = UserRegister.parser.parse_args();
+        data = UserRegister.parser.parse_args()
         if UserModel.find_by_username(data['username']):
             return {"message": "User already exists"}, 400
 
